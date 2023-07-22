@@ -51,7 +51,10 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-            sh start.sh
+            docker rm -f ruoyi
+            docker image rm -f lib201901/ruoyi
+            docker run -p 8080:8080 --name ruoyi lib201901/ruoyi -d
+
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USER }}
           pass: ${{ secrets.PASS}}
