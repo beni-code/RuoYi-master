@@ -56,5 +56,5 @@ jobs:
           script: |
             docker rm -f ruoyi
             docker image rm -f lib201901/ruoyi
-            docker run -p 8080:8080 --name ruoyi lib201901/ruoyi -d
+            docker run -p 8080:8080 --name ruoyi -d lib201901/ruoyi
 
